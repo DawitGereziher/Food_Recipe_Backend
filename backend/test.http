@@ -1,2 +1,10 @@
-GET http://localhost:8081/upload-photo
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDRlY2UwNS04Mzc5LTRkY2YtYWUwMi1kZmVhY2FiNmFhN2YiLCJleHAiOjE3NDkyNDI1NDcsImlhdCI6MTc0OTE1NjE0NywiaHR0cHM6Ly9oYXN1cmEuaW8vand0L2NsYWltcyI6eyJ4LWhhc3VyYS1hbGxvd2VkLXJvbGVzIjpbInVzZXIiLCJhZG1pbiIsImFub255bW91cyJdLCJ4LWhhc3VyYS1kZWZhdWx0LXJvbGUiOiJhZG1pbiIsIngtaGFzdXJhLXVzZXItaWQiOiI2NDRlY2UwNS04Mzc5LTRkY2YtYWUwMi1kZmVhY2FiNmFhN2YifX0.ikv8eK-wIj_2xldJlcuZxUmNDqyQS7FD7-8Y-cOYiok
+POST http://localhost:8081/api/payment/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjViYTBhMC1kYTlhLTRlY2UtYjgwYS0wZWJmODFmNzc3OGUiLCJleHAiOjE3NDk1NzgwOTYsImlhdCI6MTc0OTQ5MTY5NiwiaHR0cHM6Ly9oYXN1cmEuaW8vand0L2NsYWltcyI6eyJ4LWhhc3VyYS1hbGxvd2VkLXJvbGVzIjpbInVzZXIiLCJhZG1pbiIsImFub255bW91cyJdLCJ4LWhhc3VyYS1kZWZhdWx0LXJvbGUiOiJhZG1pbiIsIngtaGFzdXJhLXVzZXItaWQiOiI1YjViYTBhMC1kYTlhLTRlY2UtYjgwYS0wZWJmODFmNzc3OGUifX0.olzBjg7SxslSHu_a4uJsQCyYFbf_eXQsRBW1-0zTS8M
+
+{
+  "amount": 100,
+  "email": "test@chapa.et",
+  "first_name": "John",
+  "last_name": "Doe",
+  "callback_url": "https://yourdomain.com/payment/callback"
+}

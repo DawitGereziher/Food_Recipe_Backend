@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 	"time"
+
+	"Auth/payment"
     "Auth/PhotoUploader"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
@@ -146,11 +148,13 @@ func main() {
 	if err != nil {
 		log.Fatal("Failed to connect to DB:", err)
 	}
+	mux := http.NewServeMux()
+	payment.RegisterPaymentRoutes(mux)
 
 	http.HandleFunc("/register", registerHandler)
 	http.HandleFunc("/login", loginHandler)
 	http.HandleFunc("/upload-photo", photouploader.UploadPhotoHandler(db))
 
 	fmt.Println("🚀 Server running on :8081")
-	log.Fatal(http.ListenAndServe(":8081", nil))
+	log.Fatal(http.ListenAndServe(":8081",mux))
 }
